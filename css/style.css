@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* variables */
+:root {
+	/* Fonts */
+	--REGULAR-FONT-WEIGHT: 400;
+	--SEMI-HEADER-FONT-WEIGHT: 700;
+	--HEADER-FONT-WEIGHT: 900;
+	--FF: "Playfair Display", serif;
+
+	/* COLORS */
+	--LIGHT-COLOR: #f8f9fa;
+	--SEMI-LIGHT-COLOR: #e9ecef;
+	--DARK-COLOR: #212529;
+	--SEMI-DARK-COLOR: #495057;
+	--GRAY-COLOR: #adb5bd;
+
+	/* General */
+	--SHADOW: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+body {
+	font-family: var(--FF);
+	color: var(--DARK-COLOR);
+	background-color: #ccc;
+	line-height: 1.4;
+	margin: 2rem 4rem;
+}
+
+.btn {
+	background-color: var(--SEMI-DARK-COLOR);
+	color: var(--LIGHT-COLOR);
+	padding: 0.6rem 1rem;
+	text-decoration: none;
+	border: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+.wrapper {
+	display: grid;
+	grid-gap: 1.2rem;
+}
+
+/* Navigation */
+.main-nav ul {
+	display: grid;
+	grid-gap: 1.2rem;
+	padding: 0;
+	list-style: none;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+	background-color: var(--DARK-COLOR);
+	color: var(--LIGHT-COLOR);
+	padding: 0.4rem 2rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+	font-weight: var(--SEMI-HEADER-FONT-WEIGHT);
+}
