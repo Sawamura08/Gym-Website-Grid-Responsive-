@@ -30,7 +30,7 @@ body {
 	color: var(--DARK-COLOR);
 	background-color: #ccc;
 	line-height: 1.4;
-	margin: 2rem 4rem;
+	margin: 2rem;
 }
 
 .btn {
@@ -39,6 +39,7 @@ body {
 	padding: 0.6rem 1rem;
 	text-decoration: none;
 	border: none;
+	cursor: pointer;
 }
 
 img {
@@ -68,4 +69,284 @@ img {
 	display: block;
 	text-align: center;
 	font-weight: var(--SEMI-HEADER-FONT-WEIGHT);
+}
+
+.main-nav a:is(a:hover, a:active) {
+	background-color: var(--GRAY-COLOR);
+	color: var(--DARK-COLOR);
+}
+
+/* Top Container */
+.top-container {
+	display: grid;
+	grid-gap: 1.2rem;
+	grid-template-areas:
+		"showase showcase top-box-a"
+		"showase showcase top-box-b";
+}
+
+/* showcase */
+.showcase {
+	grid-area: showcase;
+	min-height: 25rem;
+	background: linear-gradient(
+			to top,
+			rgba(0, 0, 0, 0.5) 50%,
+			rgba(0, 0, 0, 0.5) 50%
+		),
+		url("/img/CARD2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: 3rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.showcase h1 {
+	font-size: 4rem;
+	margin-bottom: 0;
+	font-weight: 900;
+	color: var(--SEMI-LIGHT-COLOR);
+}
+
+.showcase p {
+	font-size: 1.5rem;
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 400;
+	color: var(--LIGHT-COLOR);
+}
+
+/* Top box */
+.top-box {
+	background-color: var(--LIGHT-COLOR);
+	padding: 1rem;
+	border-radius: 10px;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.top-box .price {
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.top-box-a {
+	grid-area: top-box-a;
+}
+.top-box-b {
+	grid-area: top-box-b;
+}
+
+/* BOXES */
+.boxes {
+	display: grid;
+	grid-gap: 1.2rem;
+	grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+}
+
+.box {
+	background-color: var(--DARK-COLOR);
+	padding: 1.5rem;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.box i {
+	color: var(--GRAY-COLOR);
+}
+
+.box h3 {
+	color: var(--SEMI-LIGHT-COLOR);
+	font: 1.2rem;
+	margin: 0.6rem 0;
+}
+
+.box p {
+	color: var(--LIGHT-COLOR);
+	margin: 1rem 0;
+}
+
+/* INFO */
+
+.info {
+	background-color: var(--LIGHT-COLOR);
+	display: grid;
+	grid-gap: 1.9rem;
+	grid-template-columns: repeat(2, 1fr);
+	place-content: center;
+	padding: 3rem;
+}
+
+.info img {
+	max-width: auto;
+}
+
+.info h2 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	font-weight: var(--HEADER-FONT-WEIGHT);
+}
+
+.info p {
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+/* Portfolio */
+.portfolio {
+	display: grid;
+	grid-gap: 1.2rem;
+	grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+}
+
+.portfolio img {
+	width: 100%;
+}
+
+/* footer */
+footer {
+	max-width: 100%;
+	display: grid;
+	place-content: center;
+	background-color: var(--DARK-COLOR);
+	color: var(--LIGHT-COLOR);
+	margin-top: 2rem;
+	padding: 1.5rem;
+	font-size: 2rem;
+	font-weight: 900;
+}
+
+/* Media Queries */
+
+@media all and (max-width: 400px) {
+	.showcase {
+		padding: 1rem;
+	}
+
+	.showcase h1 {
+		font-size: 1.4rem;
+	}
+
+	.showcase p {
+		font-size: 0.8rem;
+	}
+}
+
+@media all and (max-width: 500px) {
+	.top-container {
+		grid-template-areas:
+			"showcase"
+			"top-box-a"
+			"top-box-b";
+	}
+
+	.showcase h1 {
+		font-size: 2rem;
+	}
+
+	.showcase p {
+		font-size: 1rem;
+	}
+
+	.info h2 {
+		font-size: 1.5rem;
+	}
+
+	.info p {
+		font-size: 0.7rem;
+	}
+
+	footer {
+		font-size: 1.5rem;
+	}
+
+	.info {
+		padding: 1rem;
+	}
+}
+
+@media all and (max-width: 700px) {
+	.top-container {
+		grid-template-areas:
+			"showcase showcase"
+			"top-box-a top-box-b";
+	}
+
+	.showcase h1 {
+		font-size: 2.5rem;
+	}
+
+	.main-nav ul {
+		grid-template-columns: 1fr;
+	}
+
+	.info {
+		grid-template-columns: 1fr;
+	}
+
+	.info .btn {
+		display: block;
+		text-align: center;
+		margin: auto;
+		width: 100%;
+	}
+
+	.info img {
+		width: 100%;
+	}
+}
+
+@media all and (min-width: 700px) {
+	.info h2 {
+		font-size: 1.5rem;
+	}
+
+	.info p {
+		font-size: 1rem;
+	}
+
+	.info img {
+		margin: auto;
+	}
+
+	.showcase h1 {
+		font-size: 2rem;
+	}
+
+	.showcase p {
+		font-size: 1rem;
+	}
+}
+
+@media all and (min-width: 1000px) and (orientation: landscape) {
+	.info h2 {
+		font-size: 1.7rem;
+	}
+
+	.info p {
+		font-size: 1.2rem;
+	}
+
+	.showcase h1 {
+		font-size: 3rem;
+	}
+
+	.showcase p {
+		font-size: 1.5rem;
+	}
+}
+
+@media all and (min-width: 1316px) {
+	.info h2 {
+		font-size: 2.5rem;
+	}
+
+	.info p {
+		font-size: 1.3rem;
+	}
 }
