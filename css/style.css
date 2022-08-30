@@ -224,6 +224,9 @@ footer {
 /* Media Queries */
 
 @media all and (max-width: 400px) {
+	body {
+		margin: 1rem auto;
+	}
 	.showcase {
 		padding: 1rem;
 	}
@@ -238,6 +241,10 @@ footer {
 }
 
 @media all and (max-width: 500px) {
+	body {
+		margin: 1rem auto;
+	}
+
 	.top-container {
 		grid-template-areas:
 			"showcase"
