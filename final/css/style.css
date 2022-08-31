@@ -106,6 +106,7 @@ header {
 	border: solid 1px var(--SEMI-DARK-COLOR);
 	padding: 0.5rem;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 .sub-header {
@@ -144,7 +145,7 @@ header {
 	margin: 1.5rem 0;
 	display: grid;
 	grid-gap: 1.2rem;
-	grid-template-columns: (4, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
 
 .box {
@@ -188,10 +189,12 @@ i {
 
 .add-information h2 {
 	font-size: 1.4rem;
+	margin: 1rem 0;
 }
 
 .add-information p {
 	font-size: 1rem;
+	margin: 1rem 0;
 }
 
 .add-information .btn {
@@ -222,4 +225,107 @@ footer {
 	color: var(--PRIMARY-COLOR-LIGHT);
 	width: 100%;
 	text-align: center;
+}
+
+/* Media Queries */
+
+/* width */
+
+@media all and (min-width: 500px) {
+	body {
+		padding: var(--PADDING);
+	}
+
+	.navbar {
+		padding: 0;
+	}
+
+	.box-container {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	}
+}
+
+@media all and (min-width: 600px) {
+	.picture-container {
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	}
+
+	.picture-container img {
+		min-width: 25vh;
+		margin: 0.5rem;
+	}
+
+	.main-header h1 {
+		font-size: 2rem;
+	}
+
+	.main-header p {
+		font-size: 1.2rem;
+	}
+}
+
+@media all and (min-width: 700px) {
+	.navbar {
+		margin: 1rem;
+	}
+
+	.ul-container {
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	header {
+		display: grid;
+		grid-gap: 1rem;
+		grid-template-areas:
+			"main-header sub-header-a"
+			"main-header sub-header-b";
+	}
+
+	.add-information {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.add-information img {
+		margin: auto;
+	}
+
+	.add-information p {
+		font-size: 1rem;
+	}
+}
+
+@media all and (min-width: 1300px) {
+	.main-header h1 {
+		font-size: 3rem;
+	}
+
+	.main-header p {
+		font-size: 1.5rem;
+	}
+
+	.add-information h2 {
+		font-size: 2rem;
+	}
+
+	.add-information p {
+		font-size: 1.3rem;
+	}
+}
+
+/* height */
+@media all and (min-height: 1100px) and (orientation: landscape) {
+	body {
+		margin: auto;
+		padding: 0;
+	}
+
+	header {
+		padding: 1.2rem;
+	}
+
+	.picture-container {
+		grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	}
 }
